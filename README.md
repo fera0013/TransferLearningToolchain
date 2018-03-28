@@ -2,7 +2,14 @@
 
 Transfer learning is the adaption of pre-trained models to similar or moderately different tasks, by fine-tuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
 
-This repository aims to provide a template to help you mastering the technological part of transfer learning for object detection tasks, using the powerful [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). The instructions below focus on transfer learning using one of the [models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) trained on the [COCO dataset](http://cocodataset.org/#home), one of the largest and most popular image sets used in research and development.  
+This repository aims to provide a template to help you mastering the technological part of transfer learning for object detection tasks, using the powerful [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). The instructions below follow an exemplary path to a succesful transfer learning model using a rather specific combination of tools, frameworks and models. We use
+
+* [google-image-downloader](https://github.com/fera0013/google-images-download), to create a csv with image URLs, based on google search queries
+* [https://www.labelbox.io/](https://www.labelbox.io/), to label, export and convert the dataset
+* one of the [models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) trained on the [COCO dataset](http://cocodataset.org/#home)
+* [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), for transfer learning
+
+There are no doubt many alternatives for each step in this tool-chain and several different workflows for implementing a transfer learning model. Use the workflow outlined below if you want to focus on the interesting parts of transfer learning, instead of fiddling with low-level plumbing and piping. 
 
 ## Dataset
 
