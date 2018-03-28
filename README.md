@@ -16,7 +16,7 @@ If you can't find an existing dataset covering the objects you want to detect, y
  Use [this script](https://github.com/fera0013/google-images-download), if you want to automize the process based on google search queries. 
 2.  [Create a labelbox project and upload your dataset](https://github.com/Labelbox/Labelbox#quickstart)
 3. (optional) [Adapt the labeling interface] (https://github.com/Labelbox/Labelbox#creating-custom-labeling-interfaces) 
-4. Label away
+4. Label away using the [semantic segmentation interface](https://github.com/Labelbox/Labelbox#image-segmentation-interface) 
 5. [Export the labeled dataset](https://github.com/Labelbox/Labelbox#exporting-labels) in json format
 6. Use [this script](https://github.com/Labelbox/Labelbox/blob/master/scripts/README.md#labelbox-json-to-coco) to convert from json to COCO format.
 
