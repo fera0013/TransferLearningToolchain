@@ -6,4 +6,9 @@ This repository aims to provide a template to help you mastering the technologic
 
 ## Dataset
 
+A typical application for transfer learning is the adaptions of existing models, to detect new object classes not contained in the dataset the models were originally trained on. Depending on the similarity of the original and the new object classes, different parts of models have to be fine-tuned. A necessary prerequisite for that is to obtain or generate sample images, representing the new object classes.
+
+### Generate a new dataset (optional) 
+
+
 
