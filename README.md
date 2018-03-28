@@ -26,4 +26,5 @@ If you can't find an existing dataset covering the objects you want to detect, y
 4. Label away using the [semantic segmentation interface](https://github.com/Labelbox/Labelbox#image-segmentation-interface) 
 5. [Export the labeled dataset](https://github.com/Labelbox/Labelbox#exporting-labels) in json format
 6. Use [this script](https://github.com/Labelbox/Labelbox/blob/master/scripts/README.md#labelbox-json-to-coco) to convert from json to COCO format.
+7. Place the output file from step 6 in the [data folder](data/) (See the [sample file](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json) for a reference of the expected output format)
 
