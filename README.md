@@ -2,7 +2,9 @@
 
 Transfer learning is the adaption of pre-trained models to similar or moderately different tasks, by fine-tuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
 
-This repository aims to provide a template to help you mastering the technological part of transfer learning for object detection tasks, using the powerful [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). If you know what you want to use transfer learning for, follow the steps below to get a working implementation. 
+This repository aims to provide a template to help you mastering the technological part of transfer learning for object detection tasks, using the powerful [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). Specifically, the template focuses on transfer learning using one of the [models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) trained on the [COCO dataset](http://cocodataset.org/#home), one of the largest and most popular image sets used in research and development. 
+
+If you know what you want to use transfer learning for, follow the steps below to get a working implementation. 
 
 ## Dataset
 
