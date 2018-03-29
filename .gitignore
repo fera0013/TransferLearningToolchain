@@ -1,3 +1,13 @@
 
 *.jpg
 *.record
+model/model.ckpt.data-00000-of-00001
+model/model.ckpt.index
+model/model.ckpt.meta
+model/train/checkpoint
+model/train/events.out.tfevents.1522333632.DESKTOP-HBRT0G8
+model/train/graph.pbtxt
+model/train/model.ckpt-0.data-00000-of-00001
+model/train/model.ckpt-0.index
+model/train/model.ckpt-0.meta
+model/train/pipeline.config
