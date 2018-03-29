@@ -45,7 +45,7 @@ python create_coco_tf_record.py --train_annotations_file=../data/coco_labels.jso
 
 Please note that - for convenience - we used the same annotation file for training, validation and testing. For production, you should use disjoint annotation files for each of these tasks. 
 
-### Training the model with [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
+### Configure the model (https://github.com/tensorflow/models/tree/master/research/object_detection)
 
 The following steps very much depend on many different aspects, such as the model you intend to use and the relation between the new classes and the classes the model was originally trained on. In our example, we train [one of the models pretrained on the COCO dataset](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) to detect waste bottles, which are closely related to the bottles class contained in the original [COCO dataset](http://cocodataset.org/).
 
@@ -61,13 +61,16 @@ The following steps very much depend on many different aspects, such as the mode
 * Change the `input_path` value of the `val_input_reader` entry to  input_path: `"../data/coco_val.record"`
 * Change `label_map_path` value of the `val_input_reader` entry to `label_map_path: "../data/label_map.pbtxt"`
 7. Change other entries according to your requirements
-8. open a command line and cd to the [script/] folder
-9. enter 
+
+### Train the model 
+
+1. open a command line and cd to the [script/] folder
+2. enter 
 ```
 python train.py --logtostderr --train_dir=../model/train --pipeline_config_path=../model/faster_rcnn_resnet50_coco.config
 ```
-If everything was configured correctly, the training should complete succesfully.
+3. Observe the output trace and check the resulting output files in the newly created /train subfolder
 
-### Test the new model
+## Test the model
 
 To be done...
