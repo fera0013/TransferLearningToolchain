@@ -2,22 +2,22 @@
 
 Transfer learning is the adaption of pre-trained models to similar or moderately different tasks, by fine-tuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
 
-This repository aims to provide a template to help you mastering the technological part of transfer learning for object detection tasks, using the powerful [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). The instructions below follow an exemplary path to a succesful transfer learning model using a rather specific combination of tools, frameworks and models. We use
+This repository aims to provide a tool chain covering the technical aspects of transfer learning for object detection tasks. The instructions below follow an exemplary path to a succesful transfer learning model, based on a specific combination of tools, frameworks and models. We use
 
 * [google-image-downloader](https://github.com/fera0013/google-images-download), to create a csv with image URLs, based on google search queries
 * [https://www.labelbox.io/](https://www.labelbox.io/), to label, export and convert the dataset
 * one of the [models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) trained on the [COCO dataset](http://cocodataset.org/#home)
 * [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), for transfer learning
 
-There are no doubt many alternatives for each step in this tool-chain and several different workflows for implementing a transfer learning model. Use the workflow outlined below if you want to focus on the interesting parts of transfer learning, instead of fiddling with low-level plumbing and piping. 
+There are no doubt many alternatives for each step in this tool-chain and several different workflows for implementing a transfer learning model. Use this toolchain if you want to focus on the interesting parts of transfer learning, instead of fiddling with the low-level plumbing and piping. 
 
 ## Dataset generation
 
-A typical application for transfer learning is the adaption of existing models, to detect new object classes not contained in the dataset the models were originally trained on. Depending on the similarity of the original and the new object classes, different parts of models have to be fine-tuned. A necessary prerequisite for that is to obtain or generate sample images, representing the new object classes.
+A typical application for transfer learning is the adaption of existing models, to detect new object classes not contained in the dataset the models were originally trained on. Depending on the similarity of the original and the new object classes, different parts of models have to be fine-tuned. A necessary prerequisite for that is to obtain or generate sample images, representing the new object classes. In our examplary workflow, we want to use a model pre-trained on the [COCO dataset](http://cocodataset.org/#home), to detect waste bottles. 
 
 ### Generate a new dataset using labelbox 
 
-If you can't find an existing dataset covering the objects you want to detect, you need to collect and label images yourself. Several tools exist which greatly simplify the painstaking process of generating new datasets. The following steps roughly describe the workflow using labelbox [https://www.labelbox.io/](https://www.labelbox.io/), a powerful cloud based labeling tool, with an easy to use interface. For  more detailed instructions, go to the [labelbox documentation](https://github.com/Labelbox/Labelbox).
+If you can't find an existing dataset covering the novel objects you want to detect, you need to collect and label images yourself. Several tools exist which greatly simplify the painstaking process of generating new datasets. The following steps roughly describe the workflow using labelbox [https://www.labelbox.io/](https://www.labelbox.io/), a powerful cloud based labeling tool, with an easy to use interface. For  more detailed instructions, go to the [labelbox documentation](https://github.com/Labelbox/Labelbox).
 
 1. Create a csv-file with the URLs of images, representing your novel classes
  Use [this script](https://github.com/fera0013/google-images-download), if you want to automize the process based on google search queries. 
@@ -30,7 +30,7 @@ If you can't find an existing dataset covering the objects you want to detect, y
 
 ## Transfer learning with [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
 
-### Conversion of the COCO labels to TFRecords 
+### Convert the COCO labels to TFRecords 
 [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) requires the data to be in the [TFRecord](https://www.tensorflow.org/programmers_guide/datasets). [Understanding the TFRecord format](https://planspace.org/20170323-tfrecords_for_humans/) and getting it right is not an easy task and may take some time. Fortunately, the tensorflow records provides some scripts for the most common formats, such as [coco to TFRecord conversion](https://github.com/tensorflow/models/blob/master/research/object_detection/dataset_tools/create_coco_tf_record.py). We have slightly adapted this script to download the sample images based on the URLs contained in the [labelbox COCO export](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json).
 
 To create the TFRecords
