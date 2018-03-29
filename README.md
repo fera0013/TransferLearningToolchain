@@ -31,6 +31,7 @@ If you can't find an existing dataset representing the novel objects you want to
 ## Transfer Learning
 
 ### Convert the COCO labels to TFRecords 
+
 [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) requires the data to be in the somewhat obscure [TFRecord](https://www.tensorflow.org/programmers_guide/datasets) format. [Understanding the TFRecord format](https://planspace.org/20170323-tfrecords_for_humans/) and getting it right is not an easy task and may take some time. Fortunately, the tensorflow records provides some scripts for the most common formats, such as [coco to TFRecord conversion](https://github.com/tensorflow/models/blob/master/research/object_detection/dataset_tools/create_coco_tf_record.py). We have slightly adapted this script to download the sample images based on the URLs contained in the [labelbox COCO export](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json).
 
 To create the TFRecords
@@ -45,7 +46,7 @@ python create_coco_tf_record.py --train_annotations_file=../data/coco_labels.jso
 
 Please note that - for convenience - we used the same annotation file for training, validation and testing. For production, you should use disjoint annotation files for each of these tasks. 
 
-### Configure the model (https://github.com/tensorflow/models/tree/master/research/object_detection)
+### Configure the model 
 
 The following steps very much depend on many different aspects, such as the model you intend to use and the relation between the new classes and the classes the model was originally trained on. In our example, we train [one of the models pretrained on the COCO dataset](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) to detect waste bottles, which are closely related to the bottles class contained in the original [COCO dataset](http://cocodataset.org/).
 
