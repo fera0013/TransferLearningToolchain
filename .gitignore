@@ -1,7 +1,6 @@
 
 *.jpg
-*.record
-model/model.ckpt.data-00000-of-00001
+*model/model.ckpt.data-00000-of-00001
 model/model.ckpt.index
 model/model.ckpt.meta
 model/train/checkpoint
