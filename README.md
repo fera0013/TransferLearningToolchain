@@ -55,7 +55,7 @@ The following steps very much depend on many different aspects, such as the mode
 3. Copy all three files with .ckpt.* ending to the [model folder](model/)
 3. Copy the config file for the model you want to use from the [tensorflow repository](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs) and save it to the [model folder](model/).
 4. Create a `.pbtxt` file with the label mappings (see [data/label_map.pbtxt](this sample file) for a reference)
-5. open the config file and adapt the following parts (see [data/faster_rcnn_resnet50_coco.config](for a reference config):
+5. open the config file and adapt the following parts (see the [reference config](data/faster_rcnn_resnet50_coco.config):
 * Change the `fine-tune checkpoint` entry to  `fine_tune_checkpoint: "../model/model.ckpt""`
 * Change the `input_path` value of the `train_input_reader` entry to  `input_path: "../data/coco_train.record"`
 * Change `label_map_path` value of the `train_input_reader` entry to `label_map_path: "../data/label_map.pbtxt"`
