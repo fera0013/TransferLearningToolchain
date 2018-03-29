@@ -69,3 +69,5 @@ python train.py --logtostderr --train_dir=../model/train --pipeline_config_path=
 If everything was configured correctly, the training should complete succesfully.
 
 ### Test the new model
+
+To be done...
