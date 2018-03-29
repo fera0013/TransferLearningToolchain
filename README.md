@@ -17,7 +17,7 @@ A typical application for transfer learning is the adaption of existing models, 
 
 ### Generate a new dataset using labelbox 
 
-If you can't find an existing dataset covering the novel objects you want to detect, you need to collect and label images yourself. Several tools exist which greatly simplify the painstaking process of generating new datasets. The following steps roughly describe the workflow using labelbox [https://www.labelbox.io/](https://www.labelbox.io/), a powerful cloud based labeling tool, with an easy to use interface. For  more detailed instructions, go to the [labelbox documentation](https://github.com/Labelbox/Labelbox).
+If you can't find an existing dataset representing the novel objects you want to detect, you need to collect and label images yourself. Several tools exist which greatly simplify the painstaking process of generating new datasets. The following steps roughly describe the workflow using labelbox [https://www.labelbox.io/](https://www.labelbox.io/), a powerful cloud based labeling tool, with an easy to use interface. For  more detailed instructions, go to the [labelbox documentation](https://github.com/Labelbox/Labelbox).
 
 1. Create a csv-file with the URLs of images, representing your novel classes
  Use [this script](https://github.com/fera0013/google-images-download), if you want to automize the process based on google search queries. 
