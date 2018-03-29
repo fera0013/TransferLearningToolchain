@@ -1,19 +1,19 @@
 # A Transfer Learning Toolchain for Semantic Segmentation
 
-Transfer learning is the adaption of pre-trained models to similar or moderately different tasks, by fine-tuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
+Transfer learning is the adaption of pre-trained models to similar or moderately different tasks, by finetuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
 
-This repository aims to provide a toolchain covering the technical aspects of transfer learning for object detection tasks. The instructions below follow an exemplary path to a succesful transfer learning model, based on a specific combination of tools, frameworks and models. We use
+This repository aims to provide a toolchain covering the mere technical aspects of transfer learning for semantic segmentation. The instructions below follow an exemplary path to a succesful transfer learning model, based on a specific combination of tools, frameworks and models. We use
 
 * [google-image-downloader](https://github.com/fera0013/google-images-download), to create a csv with image URLs, based on google search queries
 * [https://www.labelbox.io/](https://www.labelbox.io/), to label, export and convert the dataset
 * one of the [models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) trained on the [COCO dataset](http://cocodataset.org/#home)
 * [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), for transfer learning
 
-There are no doubt many alternatives for each step in this toolchain and the approach to transfer learning varies greatly, depending on the particular task. Use this toolchain if you want to get started relatively quickly and try to adapt the individual steps to your specific task.
+There are no doubt many alternatives for each step in this toolchain and the approach to transfer learning varies greatly, depending on the particular task. Use this toolchain if you want to get started relatively quickly and try to adapt the individual steps to your specific requirements.
 
 ## Dataset generation
 
-A typical application for transfer learning is the adaption of existing models, to detect new object classes not contained in the dataset the models were originally trained on. Depending on the similarity of the original and the new object classes, different parts of models have to be fine-tuned. A necessary prerequisite for that is to obtain or generate sample images, representing the new object classes. In our examplary workflow, we want to use a model pre-trained on the [COCO dataset](http://cocodataset.org/#home), to detect waste bottles. 
+A typical application for transfer learning is the adaption of existing models, to detect new object classes not contained in the dataset the models were originally trained on. Depending on the similarity of the original and the new object classes, different parts of the pretrained models have to be finetuned. A necessary prerequisite for that is to obtain or generate sample images, representing the new object classes. In our examplary workflow, we want to use a model pre-trained on the [COCO dataset](http://cocodataset.org/#home), to detect waste bottles. 
 
 ### Generate a new dataset using labelbox 
 
