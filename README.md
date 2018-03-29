@@ -9,7 +9,7 @@ This repository aims to provide a tool chain covering the technical aspects of t
 * one of the [models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) trained on the [COCO dataset](http://cocodataset.org/#home)
 * [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), for transfer learning
 
-There are no doubt many alternatives for each step in this tool-chain and several different workflows for implementing a transfer learning model. Use this toolchain if you want to focus on the interesting parts of transfer learning, instead of fiddling with the low-level plumbing and piping. 
+There are no doubt many alternatives for each step in this toolchain and several different workflows for implementing a transfer learning model. Use this toolchain if you want to focus on the interesting parts of transfer learning, instead of fiddling with the low-level plumbing and piping. 
 
 ## Dataset generation
 
