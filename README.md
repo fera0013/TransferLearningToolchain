@@ -26,7 +26,9 @@ If you can't find an existing dataset representing the novel objects you want to
 4. Label away using the [semantic segmentation interface](https://github.com/Labelbox/Labelbox#image-segmentation-interface) 
 5. [Export the labeled dataset](https://github.com/Labelbox/Labelbox#exporting-labels) in json format
 6. Use [this script](https://github.com/Labelbox/Labelbox/blob/master/scripts/README.md#labelbox-json-to-coco) to convert from json to COCO format.
-7. Place the output file from step 6 in the [data folder](data/) (See the [sample file](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json) for a reference of the expected output format)
+7. Place the output file from step 6 in the [data folder](data/) 
+
+See [coco_labels.json](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json) for the result of this step.
 
 ## Transfer Learning
 
@@ -63,7 +65,7 @@ The following steps very much depend on many different aspects, such as the mode
 * Change `label_map_path` value of the `val_input_reader` entry to `label_map_path: "../data/label_map.pbtxt"`
 7. Change other entries according to your requirements
 
-See [label_map.pbtxt](data/label_map.pbtxt) and [aster_rcnn_resnet50_coco.config](data/faster_rcnn_resnet50_coco.config) for the results of this step. 
+See [label_map.pbtxt](data/label_map.pbtxt) and [faster_rcnn_resnet50_coco.config](model/faster_rcnn_resnet50_coco.config) for the results of this step. 
 
 ### Train the model 
 
