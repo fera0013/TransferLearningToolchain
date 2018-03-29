@@ -11,11 +11,11 @@ This repository aims to provide a template to help you mastering the technologic
 
 There are no doubt many alternatives for each step in this tool-chain and several different workflows for implementing a transfer learning model. Use the workflow outlined below if you want to focus on the interesting parts of transfer learning, instead of fiddling with low-level plumbing and piping. 
 
-## Dataset
+## Dataset generation
 
 A typical application for transfer learning is the adaption of existing models, to detect new object classes not contained in the dataset the models were originally trained on. Depending on the similarity of the original and the new object classes, different parts of models have to be fine-tuned. A necessary prerequisite for that is to obtain or generate sample images, representing the new object classes.
 
-### Generate a new dataset using labelbox (optional) 
+### Generate a new dataset using labelbox 
 
 If you can't find an existing dataset covering the objects you want to detect, you need to collect and label images yourself. Several tools exist which greatly simplify the painstaking process of generating new datasets. The following steps roughly describe the workflow using labelbox [https://www.labelbox.io/](https://www.labelbox.io/), a powerful cloud based labeling tool, with an easy to use interface. For  more detailed instructions, go to the [labelbox documentation](https://github.com/Labelbox/Labelbox).
 
@@ -28,3 +28,44 @@ If you can't find an existing dataset covering the objects you want to detect, y
 6. Use [this script](https://github.com/Labelbox/Labelbox/blob/master/scripts/README.md#labelbox-json-to-coco) to convert from json to COCO format.
 7. Place the output file from step 6 in the [data folder](data/) (See the [sample file](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json) for a reference of the expected output format)
 
+## Transfer learning with [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
+
+### Conversion of the COCO labels to TFRecords 
+[Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) requires the data to be in the [TFRecord](https://www.tensorflow.org/programmers_guide/datasets). [Understanding the TFRecord format](https://planspace.org/20170323-tfrecords_for_humans/) and getting it right is not an easy task and may take some time. Fortunately, the tensorflow records provides some scripts for the most common formats, such as [coco to TFRecord conversion](https://github.com/tensorflow/models/blob/master/research/object_detection/dataset_tools/create_coco_tf_record.py). We have slightly adapted this script to download the sample images based on the URLs contained in the [labelbox COCO export](https://github.com/fera0013/TransferLearningWithTensorflowAPI/blob/master/data/coco_labels.json).
+
+To create the TFRecords
+
+1. Open a command line and cd to the [script folder](data/script)
+2. Enter 
+```
+python create_coco_tf_record.py --train_annotations_file=../data/coco_labels.json --val_annotations_file=../data/coco_labels.json --testdev_annotations_file=../data/coco_labels.json   --train_image_dir=../data/images/train --val_image_dir=../data/images/val --test_image_dir=../data/images/test --output_dir=../data
+```
+
+3. Navigate to [the data folder](data/), where you should find 3 .record files if the script completed correctly
+
+Please note that - for convenience - we used the same annotation file for training, validation and testing. For production, you should use disjoint annotation files for each of these tasks. 
+
+### Transfer learn the new classes
+
+The following steps very much depend on many different aspects, such as the model you intend to use and the relation between the new classes and the classes the model was originally trained on. In our example, we train [one of the models pretrained on the COCO dataset](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) to detect waste bottles, which are closely related to the bottles class contained in the original [COCO dataset](http://cocodataset.org/).
+
+1. Download [one of the models pretrained on the COCO dataset](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models)
+2. Unpack the downloaded tar
+3. Copy all three files with .ckpt.* ending to the [model folder](model/)
+3. Copy the config file for the model you want to use from the [tensorflow repository](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs) and save it to the [model folder](model/).
+4. Create a `.pbtxt` file with the label mappings (see [data/label_map.pbtxt](this sample file) for a reference)
+5. open the config file and adapt the following parts (see [data/faster_rcnn_resnet50_coco.config](for a reference config):
+* modifiy the `fine-tune checkpoint` to  `fine_tune_checkpoint: "fine_tune_checkpoint: "../model/model.ckpt""`
+* Change the `input_path` of the `train_input_reader` entry to  `input_path: "../data/coco_train.record"`
+* Change `label_map_path` of the `train_input_reader` entry to `label_map_path: "../data/label_map.pbtxt"`
+* Change the `input_path` of the `val_input_reader` entry to  input_path: `"../data/coco_val.record"`
+* Change `label_map_path` of the `val_input_reader` entry to `label_map_path: "../data/label_map.pbtxt"`
+7. Change other entries according to your requirements
+8. open a command line and cd to the [script/] folder
+9. enter 
+```
+python train.py --logtostderr --train_dir=../model/train --pipeline_config_path=../model/faster_rcnn_resnet50_coco.config
+```
+If everything was configured correctly, the training should succesfully complete.
+
+### Test the new model
