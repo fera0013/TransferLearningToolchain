@@ -1,6 +1,6 @@
 # A Transfer Learning Toolchain for Semantic Segmentation
 
-Transfer learning is the adaption of pre-trained models to similar or moderately different tasks, by finetuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
+Transfer learning is the adaption of pretrained models to similar or moderately different tasks, by finetuning parameters of the pre-trained models. Using the transfer learning approach can help you to develop powerful models, by building on the results of top experts in the deep learning field. Although it sounds like a simple task, transfer learning still requires a lot of [research](https://machinelearningmastery.com/transfer-learning-for-deep-learning/), thorough preparation, development and testing. 
 
 This repository aims to provide a toolchain covering the mere technical aspects of transfer learning for semantic segmentation. The instructions below follow an exemplary path to a succesful transfer learning model, based on a specific combination of tools, frameworks and models. We use
 
