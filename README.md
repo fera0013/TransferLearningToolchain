@@ -66,6 +66,6 @@ The following steps very much depend on many different aspects, such as the mode
 ```
 python train.py --logtostderr --train_dir=../model/train --pipeline_config_path=../model/faster_rcnn_resnet50_coco.config
 ```
-If everything was configured correctly, the training should succesfully complete.
+If everything was configured correctly, the training should complete succesfully.
 
 ### Test the new model
