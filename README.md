@@ -91,7 +91,22 @@ The result of this step should be a newly created `fine_tuned_model` subfolder i
 
 ## Visualize the results
 
-for 
+[TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) is a powerful set of tools, to visualize important aspects of a TensorFlow program. We can use it to understand, debug and optimize a TensorFlow graph and to gain an overview of important performance metrics.
+
+1. Install TensorBoard with `pip install tensorboard`
+2. Copy [import_pb_to_tensorboard.py](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/import_pb_to_tensorboard.py) to the [scripts folder](scripts/) (for convenience, we have already included this script in the repository). 
+3. Create a `logdir` subfolder in the [fine_tuned_model subfolder](model\fine_tuned_model) created in the previous step
+3. Open a command prompt and cd to the [scripts folder](scripts/)
+4. Enter ``` python import_pb_to_tensorboard.py --model_dir ../model/fine_tuned_model/frozen_inference_graph.pb --log_dir ../model/fine_tuned_model/logdir```  
+5. Run  ```tensorboard --logdir=..\model\fine_tuned_model\logdir```
+
+If everything works correctly, you should get an output which among other information should contain a line of the following type:
+
+`TensorBoard 1.7.0 at http://DESKTOP-HBRT0G8:6006 (Press CTRL+C to quit)`
+
+Open a browser and enter the address contained in this line, to view the TensorBoard UI. 
+
+For more information about inspecting a graph using TensorBoard see the [TensorBoard documentation](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) or read [this tutorial](https://medium.com/@daj/how-to-inspect-a-pre-trained-tensorflow-model-5fd2ee79ced0)
 
 ## Test the model
 
