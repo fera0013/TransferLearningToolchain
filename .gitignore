@@ -17,3 +17,4 @@ model/fine_tuned_model/model.ckpt.index
 model/fine_tuned_model/model.ckpt.meta
 model/fine_tuned_model/pipeline.config
 model/fine_tuned_model/saved_model/saved_model.pb
+*.DESKTOP-HBRT0G8
