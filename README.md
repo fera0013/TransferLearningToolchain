@@ -87,7 +87,7 @@ The generation of an `_inference_graph.pb` file from the `.ckpt` files created i
 python export_inference_graph.py --input_type image_tensor --pipeline_config_path ../model/faster_rcnn_resnet50_coco.config --trained_checkpoint_prefix ../model/train/model.ckpt-0 --output_directory ../model/fine_tuned_model
 ```
 
-The result of this step should be a newly created `fine_tuned_model` subfolder in the [models folder](models/), containing several `.ckpt` files and one `frozen_inference_graph.pb` file. 
+The result of this step should be a newly created `fine_tuned_model` subfolder in the [models folder](model/), containing several `.ckpt` files and one `frozen_inference_graph.pb` file. 
 
 ## Visualize the results
 
