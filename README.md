@@ -99,14 +99,9 @@ The result of this step should be a newly created `fine_tuned_model` subfolder i
 3. Open a command prompt and cd to the [scripts folder](scripts/)
 4. Enter ``` python import_pb_to_tensorboard.py --model_dir ../model/fine_tuned_model/frozen_inference_graph.pb --log_dir ../model/fine_tuned_model/logdir```  
 5. Run  ```tensorboard --logdir=..\model\fine_tuned_model\logdir```
+6. Open a browser and enter `http://localhost:6006`, to view the TensorBoard results
 
-If everything works correctly, you should get an output which among other information should contain a line of the following type:
-
-`TensorBoard 1.7.0 at http://DESKTOP-HBRT0G8:6006 (Press CTRL+C to quit)`
-
-Open a browser and enter the address contained in this line, to view the TensorBoard UI. 
-
-For more information about inspecting a graph using TensorBoard see the [TensorBoard documentation](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) or read [this tutorial](https://medium.com/@daj/how-to-inspect-a-pre-trained-tensorflow-model-5fd2ee79ced0)
+For more information about using TensorBoard, see the [TensorBoard documentation](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) or read [this tutorial](https://medium.com/@daj/how-to-inspect-a-pre-trained-tensorflow-model-5fd2ee79ced0)
 
 ## Test the model
 
