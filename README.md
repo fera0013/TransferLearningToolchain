@@ -76,6 +76,23 @@ python train.py --logtostderr --train_dir=../model/train --pipeline_config_path=
 ```
 3. Observe the output trace and check the resulting output files in the newly created /train subfolder
 
+## Saving the inference graph
+
+The generation of an `_inference_graph.pb` file from the `.ckpt` files created in the previous step, is a necessary prerequisite for the following two steps. 
+
+1. Copy [export_inference_graph.py](https://github.com/tensorflow/models/blob/master/research/object_detection/export_inference_graph.py) into the [scripts folder](scripts/). (Please note: We have already included that script to the repository, for convenience)
+2. Open a command prompt and cd to the [scripts folder](scripts/)
+3. enter
+```
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path ../model/faster_rcnn_resnet50_coco.config --trained_checkpoint_prefix ../model/train/model.ckpt-0 --output_directory ../model/fine_tuned_model
+```
+
+The result of this step should be a newly created `fine_tuned_model` subfolder in the [models folder](models/), containing several `.ckpt` files and one `frozen_inference_graph.pb` file. 
+
+## Visualize the results
+
+for 
+
 ## Test the model
 
 To be done...
