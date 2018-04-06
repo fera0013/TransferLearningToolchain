@@ -194,7 +194,7 @@ def _create_tf_record_from_coco_annotations(
     include_masks: Whether to include instance segmentations masks
       (PNG encoded) in the result. default: False.
   """
-  with tf.gfile.GFile(annotations_file, 'r') as fid:
+  with tf.gfile.GFile(annotations_file, 'rb') as fid:
     groundtruth_data = json.load(fid)
     images = groundtruth_data['images']
     category_index = label_map_util.create_category_index(
