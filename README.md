@@ -89,7 +89,7 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 
 The result of this step should be a newly created `fine_tuned_model` subfolder in the [models folder](model/), containing several `.ckpt` files and one `frozen_inference_graph.pb` file. 
 
-## Visualize the results
+## Inspect the graph
 
 [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) is a powerful set of tools, to visualize important aspects of a TensorFlow program. We can use it to understand, debug and optimize a TensorFlow graph and to gain an overview of important performance metrics.
 
@@ -103,6 +103,21 @@ The result of this step should be a newly created `fine_tuned_model` subfolder i
 
 For more information about using TensorBoard, see the [TensorBoard documentation](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) or read [this tutorial](https://medium.com/@daj/how-to-inspect-a-pre-trained-tensorflow-model-5fd2ee79ced0)
 
-## Test the model
+## Inference and evaluation 
 
-To be done...
+To evaluate the model performance, we run the test data created in the [TFRecord generation step](#Convert the COCO labels to TFRecords) through the frozen graph generated in [this step](#Saving the inference graph).
+
+1. Copy [detection_inference.py](https://github.com/tensorflow/models/blob/master/research/object_detection/inference/detection_inference.py) into the [scripts folder](scripts/) (We have already included this script into the repository)
+2. Copy [infer_detections.py](https://github.com/tensorflow/models/blob/master/research/object_detection/inference/infer_detections.py) into the [scripts folder](scripts/) (We have already included this script into the repository)
+3. Run ```python -m infer_detections --input_tfrecord_paths=../data/coco_testdev.record --output_tfrecord_path=../data/inference --inference_graph=../model/fine_tuned_model/frozen_inference_graph.pb --discard_image_pixels```
+
+Check the `/data/inference` subfolder for the results of this step. For more information about inference using the Tensorflow API, see [this TensorFlow tutorial](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/oid_inference_and_evaluation.md). 
+
+## Visualize the results
+
+In the final step, we visualize the results of our model on several test images. 
+
+1. Copy [visualization_utils.py](https://github.com/tensorflow/models/blob/master/research/object_detection/utils/visualization_utils.py) into the [scripts folder](scripts/). 
+2. 
+
+We can't expect any good results obviously, since our dataset is way too small. 
