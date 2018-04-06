@@ -89,7 +89,7 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 
 The result of this step should be a newly created `fine_tuned_model` subfolder in the [models folder](model/), containing several `.ckpt` files and one `frozen_inference_graph.pb` file. 
 
-## Inspect the graph
+## Inspecting the graph
 
 [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) is a powerful set of tools, to visualize important aspects of a TensorFlow program. We can use it to understand, debug and optimize a TensorFlow graph and to gain an overview of important performance metrics.
 
