@@ -111,13 +111,4 @@ To evaluate the model performance, we run the test data created in the [TFRecord
 2. Copy [infer_detections.py](https://github.com/tensorflow/models/blob/master/research/object_detection/inference/infer_detections.py) into the [scripts folder](scripts/) (We have already included this script into the repository)
 3. Run ```python -m infer_detections --input_tfrecord_paths=../data/coco_testdev.record --output_tfrecord_path=../data/inference --inference_graph=../model/fine_tuned_model/frozen_inference_graph.pb --discard_image_pixels```
 
-Check the `/data/inference` subfolder for the results of this step. For more information about inference using the Tensorflow API, see [this TensorFlow tutorial](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/oid_inference_and_evaluation.md). 
-
-## Visualize the results
-
-In the final step, we visualize the results of our model on several test images. 
-
-1. Copy [visualization_utils.py](https://github.com/tensorflow/models/blob/master/research/object_detection/utils/visualization_utils.py) into the [scripts folder](scripts/). 
-2. 
-
-We can't expect any good results obviously, since our dataset is way too small. 
+Check the `/data/inference` subfolder for the results of this step. For more information about inference using the Tensorflow API, see [this TensorFlow tutorial](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/oid_inference_and_evaluation.md).
