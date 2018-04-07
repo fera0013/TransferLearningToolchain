@@ -1,0 +1,96 @@
+{
+	"info": {
+		"year": 2018,
+		"version": null,
+		"description": "Peaches",
+		"contributor": "ralph@r4robotics.com.au",
+		"url": "labelbox.io",
+		"date_created": "2018-04-07T10:08:51.409340+00:00"
+	},
+	"images": [{
+		"id": "cjfp6vz7xfwz20198ixce9la4",
+		"width": 274,
+		"height": 184,
+		"file_name": "https://firebasestorage.googleapis.com/v0/b/labelbox-193903.appspot.com/o/cjfp6hjghfuvd01147d130984%2F5a7fdf5d-201a-40d0-bfef-c36d6ed02212%2Fpeach8.jpg?alt=media&token=11337eaa-4ffd-4dfb-b3ec-9c4ee6bd2f17",
+		"license": null,
+		"flickr_url": "https://firebasestorage.googleapis.com/v0/b/labelbox-193903.appspot.com/o/cjfp6hjghfuvd01147d130984%2F5a7fdf5d-201a-40d0-bfef-c36d6ed02212%2Fpeach8.jpg?alt=media&token=11337eaa-4ffd-4dfb-b3ec-9c4ee6bd2f17",
+		"coco_url": "https://firebasestorage.googleapis.com/v0/b/labelbox-193903.appspot.com/o/cjfp6hjghfuvd01147d130984%2F5a7fdf5d-201a-40d0-bfef-c36d6ed02212%2Fpeach8.jpg?alt=media&token=11337eaa-4ffd-4dfb-b3ec-9c4ee6bd2f17",
+		"date_captured": null
+	}, {
+		"id": "cjfp6wqfhfwyu0107il09db3p",
+		"width": 275,
+		"height": 183,
+		"file_name": "https://firebasestorage.googleapis.com/v0/b/labelbox-193903.appspot.com/o/cjfp6hjghfuvd01147d130984%2F5a7fdf5d-201a-40d0-bfef-c36d6ed02212%2Fpeach9.jpg?alt=media&token=39dd5e97-c411-43e9-9ba3-9f51a334c7c7",
+		"license": null,
+		"flickr_url": "https://firebasestorage.googleapis.com/v0/b/labelbox-193903.appspot.com/o/cjfp6hjghfuvd01147d130984%2F5a7fdf5d-201a-40d0-bfef-c36d6ed02212%2Fpeach9.jpg?alt=media&token=39dd5e97-c411-43e9-9ba3-9f51a334c7c7",
+		"coco_url": "https://firebasestorage.googleapis.com/v0/b/labelbox-193903.appspot.com/o/cjfp6hjghfuvd01147d130984%2F5a7fdf5d-201a-40d0-bfef-c36d6ed02212%2Fpeach9.jpg?alt=media&token=39dd5e97-c411-43e9-9ba3-9f51a334c7c7",
+		"date_captured": null
+	}],
+	"annotations": [ {
+		"id": 23,
+		"image_id": "cjfp6vz7xfwz20198ixce9la4",
+		"category_id": 1,
+		"segmentation": [
+			[31.0, 72.0, 63.0, 84.0, 75.0, 105.0, 67.0, 134.0, 68.0, 158.0, 44.0, 174.0, 24.0, 178.0, 2.0, 172.0, 2.0, 82.0, 31.0, 72.0]
+		],
+		"area": 6301.0,
+		"bbox": [2.0, 6.0, 73.0, 106.0],
+		"iscrowd": 0
+	}, {
+		"id": 24,
+		"image_id": "cjfp6vz7xfwz20198ixce9la4",
+		"category_id": 1,
+		"segmentation": [
+			[75.0, 103.0, 108.0, 76.0, 137.0, 74.0, 166.0, 89.0, 182.0, 104.0, 188.0, 145.0, 179.0, 171.0, 167.0, 183.0, 92.0, 183.0, 72.0, 158.0, 68.0, 134.0, 75.0, 103.0]
+		],
+		"area": 10652.5,
+		"bbox": [68.0, 1.0, 120.0, 109.0],
+		"iscrowd": 0
+	}, {
+		"id": 25,
+		"image_id": "cjfp6vz7xfwz20198ixce9la4",
+		"category_id": 1,
+		"segmentation": [
+			[169.0, 92.0, 182.0, 66.0, 211.0, 53.0, 246.0, 66.0, 262.0, 80.0, 268.0, 95.0, 261.0, 129.0, 241.0, 145.0, 216.0, 153.0, 188.0, 143.0, 184.0, 105.0, 169.0, 92.0]
+		],
+		"area": 6838.5,
+		"bbox": [169.0, 31.0, 99.0, 100.0],
+		"iscrowd": 0
+	}, {
+		"id": 26,
+		"image_id": "cjfp6wqfhfwyu0107il09db3p",
+		"category_id": 1,
+		"segmentation": [
+			[86.0, 54.0, 109.0, 56.0, 119.0, 73.0, 113.0, 92.0, 93.0, 101.0, 76.0, 92.0, 70.0, 77.0, 71.0, 63.0, 86.0, 54.0]
+		],
+		"area": 1715.0,
+		"bbox": [70.0, 82.0, 49.0, 47.0],
+		"iscrowd": 0
+	}, {
+		"id": 27,
+		"image_id": "cjfp6wqfhfwyu0107il09db3p",
+		"category_id": 1,
+		"segmentation": [
+			[117.0, 95.0, 123.0, 110.0, 136.0, 118.0, 153.0, 113.0, 159.0, 99.0, 158.0, 87.0, 145.0, 79.0, 132.0, 76.0, 123.0, 84.0, 117.0, 95.0]
+		],
+		"area": 1260.0,
+		"bbox": [117.0, 65.0, 42.0, 42.0],
+		"iscrowd": 0
+	}, {
+		"id": 28,
+		"image_id": "cjfp6wqfhfwyu0107il09db3p",
+		"category_id": 1,
+		"segmentation": [
+			[109.0, 54.0, 115.0, 40.0, 133.0, 32.0, 146.0, 34.0, 157.0, 43.0, 161.0, 58.0, 152.0, 72.0, 133.0, 76.0, 119.0, 71.0, 109.0, 54.0]
+		],
+		"area": 1660.5,
+		"bbox": [109.0, 107.0, 52.0, 44.0],
+		"iscrowd": 0
+	}],
+	"licenses": [],
+	"categories": [{
+		"supercategory": "Peach",
+		"id": 1,
+		"name": "Peach"
+	}]
+}
