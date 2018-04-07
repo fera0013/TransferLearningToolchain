@@ -89,7 +89,7 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 
 The result of this step should be a newly created `fine_tuned_model` subfolder in the [models folder](model/), containing several `.ckpt` files and one `frozen_inference_graph.pb` file. 
 
-## Inspect the graph
+## Inspecting the graph
 
 [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) is a powerful set of tools, to visualize important aspects of a TensorFlow program. We can use it to understand, debug and optimize a TensorFlow graph and to gain an overview of important performance metrics.
 
@@ -105,7 +105,7 @@ For more information about using TensorBoard, see the [TensorBoard documentation
 
 ## Inference and evaluation 
 
-To evaluate the model performance, we run the test data created in the [TFRecord generation step](#Convert the COCO labels to TFRecords) through the frozen graph generated in [this step](#Saving the inference graph).
+To evaluate the model performance, we run the test data created in the TFRecord generation step through the frozen graph generated in one of the previous steps.
 
 1. Copy [detection_inference.py](https://github.com/tensorflow/models/blob/master/research/object_detection/inference/detection_inference.py) into the [scripts folder](scripts/) (We have already included this script into the repository)
 2. Copy [infer_detections.py](https://github.com/tensorflow/models/blob/master/research/object_detection/inference/infer_detections.py) into the [scripts folder](scripts/) (We have already included this script into the repository)
