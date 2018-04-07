@@ -19,3 +19,6 @@ model/fine_tuned_model/pipeline.config
 model/fine_tuned_model/saved_model/saved_model.pb
 *.DESKTOP-HBRT0G8
 *.pyc
+*.meta
+*.index
+*.data-00000-of-00001
